@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { GuessTheNumberController } from './guess-the-number.controller';
+import { GuessTheNumberService } from './guess-the-number.service';
+import { WebsocketsGateway } from './websockets.gateway';
+import { WsService } from './ws.service';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [GuessTheNumberController],
+  providers: [GuessTheNumberService, WebsocketsGateway, WsService],
 })
 export class AppModule {}
